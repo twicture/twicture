@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "yarn --cwd frontend install && yarn --cwd frontend build",
-    "deploy": "cp -a frontend/dist/. ./public",
+    "deploy": "cp -a frontend/dist/. ./public && mv ./public/assets/* ./public && rmdir ./public/assets",
     "heroku-postbuild": "yarn build && yarn deploy"
   }
 }
