@@ -10,9 +10,9 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.Static("/public", "./public")
+	router.Static("/", "./")
 
-	router.GET("/", func(c *gin.Context) {
+	router.GET("/api", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
