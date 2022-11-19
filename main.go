@@ -10,7 +10,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.Static("/assets", "./public")
+	router.StaticFS("/assets", http.Dir("./assets"))
 	router.LoadHTMLGlob("./public/*.html")
 
 	router.GET("/", func(c *gin.Context) {
