@@ -1,4 +1,4 @@
-module github.com/twicture/backend
+module github.com/twicture
 
 go 1.19
 
