@@ -11,8 +11,7 @@ func main() {
 	router := gin.Default()
 
 	router.StaticFS("/assets", http.Dir("./public/"))
-	router.LoadHTMLGlob("./public/*")
-	router.LoadHTMLGlob("./public/assets/*")
+	router.LoadHTMLGlob("./public/*.html")
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
