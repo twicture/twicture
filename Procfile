@@ -1,1 +1,1 @@
-web: backend
+web: go run .
