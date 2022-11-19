@@ -10,12 +10,10 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.Static("/", "./")
+	router.LoadHTMLGlob("./*.html")
 
-	router.GET("/api", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
+	router.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.html", nil)
 	})
 
 	if err := router.Run(); err != nil {
